@@ -3,6 +3,8 @@ import ButtonRepo from "@/components/ButtonRepo.vue";
 import { useCryptoStore } from "../store/cryptoB.js";
 import { watch, onMounted } from "vue";
 import { ref, computed } from "vue";
+import Counter from "@/components/Counter.vue";
+import Background from "@/components/Background.vue";
 const { connectWallet, account, accountCount, loading, accountBlock } =
   useCryptoStore();
 
@@ -27,7 +29,8 @@ window.ethereum.on("networkChanged", function (networkId) {
     class="absolute left-72 h-20 w-36 animate-spin rounded-tl-xl bg-red-300"
   ></div> -->
   <!-- <div class="bg-warning absolute left-72 h-20 w-20 rounded-b-full"></div> -->
-  <div class="">
+  <div class="max-h-screen overflow-hidden">
+    <Counter class="text-white" />
     <div
       class="mx-auto flex max-w-screen-xl flex-col items-center justify-center px-4 py-12 sm:px-6 md:flex-row md:items-start md:justify-start lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
     >

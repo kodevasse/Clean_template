@@ -10,10 +10,12 @@ setInterval(() => {
 </script>
 
 <template>
-  <div class="bg-base-200 drawer min-h-screen rounded-lg shadow">
+  <div
+    class="bg-base-200 drawer min-h-screen overflow-hidden rounded-lg shadow"
+  >
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
-      <div class="navbar bg-base-300 w-full justify-between">
+      <div class="navbar bg-base-300 hidden w-full justify-between">
         <div class="flex-none lg:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
@@ -31,11 +33,11 @@ setInterval(() => {
             </svg>
           </label>
         </div>
-        <div
-          class="from-primary from-warning mx-2 max-w-md flex-1 rounded-md bg-gradient-to-l px-2 md:from-yellow-500"
-        >
-          <span class="text-base text-gray-200 hover:animate-pulse">
-            Don't dApp
+        <div class="mx-2 max-w-md flex-1 rounded-md px-2">
+          <span
+            class="text-base font-extrabold text-gray-200 hover:animate-pulse"
+          >
+            Lær Deg Moderne Webutvikling For Web3.0
           </span>
         </div>
         <div class="hidden flex-none lg:block">
@@ -81,7 +83,7 @@ setInterval(() => {
         </div>
       </div>
       <div class="">
-        <header class="shadow" v-if="$route.meta.title">
+        <!-- <header class="shadow" v-if="$route.meta.title">
           <div class="w-full px-4 py-6">
             <h1
               @click="counter = 0"
@@ -90,7 +92,7 @@ setInterval(() => {
               {{ $route.meta.title }} / {{ counter }}
             </h1>
           </div>
-        </header>
+        </header> -->
         <main>
           <router-view />
         </main>
