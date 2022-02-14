@@ -35,7 +35,7 @@ import Background from "@/components/Background.vue";
                 class="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-400 to-teal-200 opacity-75 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"
               ></div>
               <button
-                @click="$router.push('Nft')"
+                @click="$router.push('Object')"
                 class="relative flex items-center divide-x divide-gray-600 rounded-lg bg-black px-7 py-4 leading-none"
               >
                 <span class="flex items-center space-x-5">
