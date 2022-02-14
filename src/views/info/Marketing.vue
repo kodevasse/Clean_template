@@ -5,24 +5,27 @@ import Background from "@/components/Background.vue";
   <div
     class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-900"
   >
-    <div class="relative w-full max-w-lg">
+    <div class="relative w-full max-w-2xl">
       <div
-        class="animate-blob absolute top-0 -left-4 h-72 w-72 rounded-full bg-teal-300 opacity-40 blur-xl filter"
+        class="animate-blob animation-delay-2000 sm:-top-34 absolute left-32 -top-20 h-52 w-52 rounded-full bg-white opacity-40 blur-xl filter sm:left-72"
+      ></div>
+      <div
+        class="animate-blob animation-delay-3000 absolute -top-20 -left-20 h-72 w-72 rounded-full bg-teal-300 opacity-40 blur-xl filter sm:-top-32"
       ></div>
       <div
         class="animate-blob animation-delay-2000 absolute top-0 -right-4 h-72 w-72 rounded-full bg-pink-300 opacity-40 blur-xl filter"
       ></div>
       <div
-        class="animate-blob animation-delay-4000 absolute -bottom-8 left-20 h-72 w-72 rounded-full bg-orange-300 opacity-40 blur-xl filter"
+        class="animate-blob animation-delay-4000 bottom-23 absolute left-20 h-72 w-72 rounded-full bg-orange-300 opacity-40 blur-xl filter sm:-bottom-8"
       ></div>
       <div
         class="flex flex-col items-center justify-center text-center opacity-80 sm:-ml-40 sm:-mr-40"
       >
         <h2 class="p-5 text-4xl font-extrabold text-white sm:p-10 sm:text-7xl">
-          <span class="animation-delay-3000 animate-pulse text-teal-200">
+          <span class="animation-delay-3000 text-teal-200 hover:animate-pulse">
             Lær</span
           >
-          webutvikling og web3.0 gratis!
+          webutvikling og web3.0!
         </h2>
         <div class="px-8 py-6">
           <!-- Glowing button -->
@@ -32,6 +35,7 @@ import Background from "@/components/Background.vue";
                 class="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-400 to-teal-200 opacity-75 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"
               ></div>
               <button
+                @click="$router.push('Nft')"
                 class="relative flex items-center divide-x divide-gray-600 rounded-lg bg-black px-7 py-4 leading-none"
               >
                 <span class="flex items-center space-x-5">
