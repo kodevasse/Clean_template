@@ -7,6 +7,8 @@ import NftMint from "./views/web3crypto/NftMint.vue";
 import Marketing from "./views/info/Marketing.vue";
 import Object from "./views/info/Object.vue";
 import FilterCat from "./views/info/FilterCat.vue";
+import SubmitForm from "./views/info/SubmitForm.vue";
+import ToDo from "./views/info/ToDo.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
@@ -16,7 +18,13 @@ export const routes = [
   { path: "/nftmint", component: NftMint, meta: { title: "NftMint" } },
   { path: "/marketing", component: Marketing, meta: { title: "Marketing" } },
   { path: "/object", component: Object, meta: { title: "Object" } },
-  { path: "/filtercat", component: FilterCat, meta: { title: "FilterCategory" } },
+  {
+    path: "/filtercat",
+    component: FilterCat,
+    meta: { title: "FilterCategory" },
+  },
+  { path: "/submitform", component: SubmitForm, meta: { title: "SubmitForm" } },
+  { path: "/todo", component: ToDo, meta: { title: "todo" } },
   {
     path: "/about",
     meta: { title: "About" },

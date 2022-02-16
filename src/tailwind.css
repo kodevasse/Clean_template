@@ -9,3 +9,22 @@
     animation-delay: 4s;
   }
 }
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #d5eb34;
+}
+
+.svg-icon circle {
+  stroke: #d5eb34;
+  stroke-width: 1;
+}
