@@ -22,7 +22,7 @@
       </select>
     </div>
     <p
-      class="text-font-serif ml-12 mt-5 text-lg font-bold text-teal-400 sm:ml-32"
+      class="text-font-serif ml-4 mt-5 text-lg font-bold text-teal-400 sm:ml-32"
     >
       {{ textSiri.title }}
     </p>
