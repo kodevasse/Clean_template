@@ -21,8 +21,12 @@
         <option>5</option>
       </select>
     </div>
-
-    <div class="relative flex w-full flex-col px-2 sm:ml-5 sm:w-3/4">
+    <p
+      class="text-font-serif ml-12 mt-5 text-lg font-bold text-teal-400 sm:ml-32"
+    >
+      {{ textSiri.title }}
+    </p>
+    <div class="relative mt-5 flex w-full flex-col px-2 sm:ml-5 sm:w-3/4">
       <h3 class="text-lg font-bold">Pågår 🔥🔥🔥 {{ draggingInfo }}</h3>
 
       <draggable
@@ -239,8 +243,9 @@
 <script setup>
 import draggable from "vuedraggable";
 import { MenuIcon, TrashIcon, ArrowNarrowDownIcon } from "@heroicons/vue/solid";
+import { happyList } from "../../store/happy.js";
 
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 let id = null;
 const name = ref("Handle");
 const display = ref("Handle");
@@ -248,6 +253,17 @@ const order = ref(14);
 const dragging = ref(false);
 const instruction = ref("Drag using the handle icon");
 const moreInfo = ref(false);
+const textSiri = ref("");
+onMounted(() => {
+  var value = getRandomInt(happyList.length);
+  console.log(value);
+  textSiri.value = happyList[value];
+  console.log(textSiri);
+});
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+};
+
 const list = ref([
   {
     name: "Arbeid",
