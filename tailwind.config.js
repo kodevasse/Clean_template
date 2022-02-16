@@ -38,6 +38,7 @@ module.exports = {
   ],
   daisyui: {
     themes: [
+      "dracula", // first one will be the default theme
       "luxury", // first one will be the default theme
       "emerald", // first one will be the default theme
       "dark",
