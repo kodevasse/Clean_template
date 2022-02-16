@@ -12,7 +12,7 @@ import ToDo from "./views/info/ToDo.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
-  { path: "/", component: Marketing, meta: { title: "Home" } },
+  { path: "/", component: ToDo, meta: { title: "Home" } },
   { path: "/mood", component: Mood, meta: { title: "Mood" } },
   { path: "/whitelist", component: Whitelist, meta: { title: "Whitelist" } },
   { path: "/nftmint", component: NftMint, meta: { title: "NftMint" } },
