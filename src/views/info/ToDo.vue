@@ -28,10 +28,20 @@
     </p>
     <div class="relative mt-5 flex w-full flex-col px-2 sm:ml-5 sm:w-3/4">
       <h3 class="text-lg font-bold">Pågår 🔥🔥🔥 {{ draggingInfo }}</h3>
-
+      <input type="text" v-model="text" placeholder="Filter By Skill" />
+      <div class="flex flex-row">
+        <button class="btn btn-active btn-ghost" @click="sorting0">Alle</button>
+        <button class="btn btn-active btn-ghost" @click="sorting1">1</button>
+        <button class="btn btn-active btn-ghost" @click="sorting2">2</button>
+        <button class="btn btn-active btn-ghost" @click="sorting3">3</button>
+        <button class="btn btn-active btn-ghost" @click="arbeidSort">
+          arbeid
+        </button>
+        <button class="btn btn-active btn-ghost" @click="siriSort">siri</button>
+      </div>
       <draggable
         tag="ul"
-        :list="list"
+        :list="filterProducts"
         class="flex w-full flex-col"
         handle=".handle"
         group="people"
@@ -247,13 +257,16 @@ import { happyList } from "../../store/happy.js";
 
 import { ref, computed, onMounted } from "vue";
 let id = null;
-const name = ref("Handle");
+const name = ref("");
 const display = ref("Handle");
 const order = ref(14);
 const dragging = ref(false);
 const instruction = ref("Drag using the handle icon");
 const moreInfo = ref(false);
 const textSiri = ref("");
+const skill = ref("");
+const priority = ref("");
+const text = ref("");
 onMounted(() => {
   var value = getRandomInt(happyList.length);
   console.log(value);
@@ -264,7 +277,7 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-const list = ref([
+let list = ref([
   {
     name: "Arbeid",
     id: 0,
@@ -314,7 +327,7 @@ const list = ref([
     moreInfo: false,
   },
 ]);
-const list2 = ref([
+let list2 = ref([
   {
     name: "Arbeid",
     id: 6,
@@ -364,7 +377,7 @@ const list2 = ref([
     moreInfo: false,
   },
 ]);
-const list3 = ref([
+let list3 = ref([
   {
     name: "Arbeid",
     id: 12,
@@ -446,5 +459,46 @@ const replace2 = () => {
 };
 const log = (evt) => {
   window.console.log(evt);
+};
+
+// Filtering DOING
+// FILTER BY priority
+const filterListsByPriority = () => {
+  return list.value.filter((element) => {
+    return (
+      element.priority.toLowerCase().indexOf(priority.value.toLowerCase()) != -1
+    );
+  });
+};
+
+const filterListsByType = (element) => {
+  return element.filter((list) => !name.value.indexOf(name));
+};
+const filterProductsByText = () => {
+  return list.value.filter((element) => {
+    return element.text.toLowerCase().indexOf(text.value.toLowerCase()) != -1;
+  });
+};
+const filterProducts = computed(() => {
+  return filterProductsByText(), filterListsByPriority(), filterListsByType();
+});
+
+const sorting0 = function () {
+  priority.value = "";
+};
+const sorting1 = function () {
+  priority.value = "1";
+};
+const sorting2 = function () {
+  priority.value = "2";
+};
+const sorting3 = function () {
+  priority.value = "3";
+};
+const arbeidSort = function () {
+  name.value = "Arbeid";
+};
+const siriSort = function () {
+  name.value = "Siri";
 };
 </script>

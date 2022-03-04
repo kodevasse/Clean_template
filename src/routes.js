@@ -8,11 +8,12 @@ import Marketing from "./views/info/Marketing.vue";
 import Object from "./views/info/Object.vue";
 import FilterCat from "./views/info/FilterCat.vue";
 import SubmitForm from "./views/info/SubmitForm.vue";
-import ToDo from "./views/info/ToDo.vue";
+
+import Test from "./views/info/test.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
-  { path: "/", component: ToDo, meta: { title: "Home" } },
+  { path: "/", component: Test, meta: { title: "Home" } },
   { path: "/mood", component: Mood, meta: { title: "Mood" } },
   { path: "/whitelist", component: Whitelist, meta: { title: "Whitelist" } },
   { path: "/nftmint", component: NftMint, meta: { title: "NftMint" } },
@@ -24,7 +25,7 @@ export const routes = [
     meta: { title: "FilterCategory" },
   },
   { path: "/submitform", component: SubmitForm, meta: { title: "SubmitForm" } },
-  { path: "/todo", component: ToDo, meta: { title: "todo" } },
+
   {
     path: "/about",
     meta: { title: "About" },
